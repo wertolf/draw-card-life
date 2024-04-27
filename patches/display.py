@@ -5,7 +5,7 @@ print("parsing resolution... ", end="")
 if ( len(sys.argv) > 1 ):
     resolution = sys.argv[1]
 else:
-    resolution = "960*960"
+    resolution = "1280*720"
 
 resolution = [int(s) for s in resolution.split("*")]
 
