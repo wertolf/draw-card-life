@@ -18,10 +18,10 @@ that prevents the application from crashing.
         ##tools
         from Modules.DebugTools import beforeExit, traceBug
 
-        ##
-        print('loading pygame...')
+        from patches import version
+        print(f"Draw Card Life ({version.type} version {version.major}.{version.minor})")
+
         import pygame
-        print('pygame loaded.')
         pygame.init()
 
         def logo():
@@ -41,7 +41,9 @@ that prevents the application from crashing.
 
             fade(DISPLAY, delay=500)
 
-        # logo()
+        if version.type == "release":
+            logo()
+
         from Modules.Stages.Home import home
         home()
     except Exception:
